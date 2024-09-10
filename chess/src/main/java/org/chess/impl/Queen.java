@@ -53,7 +53,7 @@ public class Queen extends ChessPiece {
     private void addEastMove(List<String> moves, char col, int row) {
         while( col>=ChessBoard.startColumn && col < ChessBoard.endColumn){
             col++;
-            position = String.valueOf((char) col) + (row);
+            position = String.valueOf( col) + (row);
             moves.add(position);
         }
 
@@ -62,7 +62,7 @@ public class Queen extends ChessPiece {
     private void addWestMove(List<String> moves, char col, int row) {
         while( col>ChessBoard.startColumn && col <= ChessBoard.endColumn){
             col--;
-            position = String.valueOf((char) col) + (row);
+            position = String.valueOf( col) + (row);
             moves.add(position);
         }
 
