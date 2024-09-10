@@ -11,7 +11,7 @@ public class ValidateTest {
     }
 
     @Test
-    public void validatePositionIsInCorrect_throwsException() throws ChessException {
+    public void validatePositionIsInCorrect_throwsException()  {
         Assertions.assertThrows(ChessException.class, ()->Validate.validatePosition("I1"));
     }
 }

@@ -1,0 +1,17 @@
+Chessboard: The chessboard is an 8 x 8 grid with 64 cells in it. With 8 rows (1, 2, 3.... 8) and 8 columns (A, B, C.... H),
+each cell can be uniquely identified with its cell number.
+Cell ranges start from A1 to H8 .
+Example : A1,A2,A3....A8.. B1, ....,B8...., H1,H2...H8
+The game of chess has 6 unique types of pieces - King, Queen, Rook, Bishop, Horse and Pawn - each with their own
+unique types of movements.
+
+1. Pawn - It can only move 1 step at a time, in the vertical forward direction.
+2. King - It can only move 1 step at a time, in all 8 directions (vertical, horizontal and diagonal)
+3. Queen - It can move across the board in all 8 directions.
+
+To Run the program to identify possible moves of above pieces , run the Main class.
+Provide the input such as Pawn, G1 and press enter.
+
+
+
+

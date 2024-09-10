@@ -17,7 +17,6 @@ public class Queen extends ChessPiece {
     @Override
     public String move() {
 
-
         char col = position.charAt(0);
         int row = Integer.parseInt(position.substring(1));
         ArrayList<String> moves = new ArrayList<>();
