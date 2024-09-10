@@ -1,6 +1,6 @@
 package org.chess;
 
-import org.chess.api.ChessPiece;
+import org.chess.piece.ChessPiece;
 import org.chess.exception.ChessException;
 import org.chess.impl.King;
 import org.chess.impl.Pawn;
@@ -26,7 +26,7 @@ public class Main {
             case "King" : yield new King(type,position);
             case "Queen" : yield  new Queen(type,position);
             default:
-                throw new IllegalStateException("Unexpected piece: " + type);
+                throw new IllegalStateException("Unexpected piece : " + type);
         };
 
 

@@ -1,4 +1,4 @@
-package org.chess.api;
+package org.chess.piece;
 
 public abstract class ChessPiece {
    protected String type;

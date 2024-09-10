@@ -1,14 +1,19 @@
 package org.chess.impl;
 
-import org.chess.api.ChessPiece;
+import org.chess.piece.ChessPiece;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class King extends ChessPiece {
     public King(String type, String position) {
         this.type = type;
         this.position = position;
+    }
+
+    private static boolean validatePosition(String position) {
+        char colIn = position.charAt(0);
+        int rowIn = Integer.parseInt(position.substring(1));
+        return colIn >= 'A' && colIn <= 'H' && rowIn >= 1 && rowIn <= 8;
     }
 
     @Override
@@ -23,15 +28,9 @@ public class King extends ChessPiece {
                 String.valueOf((char) (col + 1)) + row,
                 String.valueOf((char) (col - 1)) + (row - 1),
                 String.valueOf((char) (col + 1)) + (row - 1),
-                String.valueOf((char) (col)) + (row - 1)
+                String.valueOf( (col)) + (row - 1)
         };
-        List<String> list = Arrays.stream(moves).filter(position -> {
-             char colIn= position.charAt(0);
-             int rowIn = Integer.parseInt(position.substring(1));
-             if(colIn>='A' && colIn <='H' && rowIn >=1 && rowIn <=8) return true;
-             else return false;
-        }).toList();
-        //String.join()
+        var list = Arrays.stream(moves).filter(King::validatePosition).toList();
         return String.join(", ", list);
     }
 }

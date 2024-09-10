@@ -1,6 +1,6 @@
 package org.chess.impl;
 
-import org.chess.api.ChessPiece;
+import org.chess.piece.ChessPiece;
 import org.chess.chessboard.ChessBoard;
 
 public class Pawn extends ChessPiece {
@@ -13,12 +13,8 @@ public class Pawn extends ChessPiece {
     public String move() {
         char col = position.charAt(0);
         int row = Integer.parseInt(position.substring(1));
+        return  row < ChessBoard.noOfRows ? String.valueOf( col) + (row + 1) : position;
 
-        if (row < (ChessBoard.noOfRows)) {
-            return String.valueOf( col) + (row + 1);
-        } else {
-            return "";
-        }
 
 
     }
