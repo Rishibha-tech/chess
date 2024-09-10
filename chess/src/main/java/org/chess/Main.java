@@ -25,8 +25,9 @@ public class Main {
             case "Pawn" : yield new Pawn(type,position);
             case "King" : yield new King(type,position);
             case "Queen" : yield  new Queen(type,position);
+            case "Rook", "Bishop", "Horse": throw new ChessException("Movement is not available for "+type);
             default:
-                throw new IllegalStateException("Unexpected piece : " + type);
+                throw new ChessException("Unexpected piece : " + type);
         };
 
 

@@ -21,16 +21,19 @@ public class King extends ChessPiece {
         char col= position.charAt(0);
         int row = Integer.parseInt(position.substring(1));
         String[] moves = new String[] {
-                String.valueOf((col)) + (row + 1),
-                String.valueOf((char) (col - 1)) + (row + 1),
-                String.valueOf((char) (col + 1)) + (row + 1),
-                String.valueOf((char) (col - 1)) + row,
-                String.valueOf((char) (col + 1)) + row,
-                String.valueOf((char) (col - 1)) + (row - 1),
-                String.valueOf((char) (col + 1)) + (row - 1),
-                String.valueOf( (col)) + (row - 1)
+                String.valueOf((char) (col - 1)) + (row - 1), // south west
+                String.valueOf((char) (col - 1)) + row, // west
+                String.valueOf((char) (col + 1)) + (row + 1), // north west
+                String.valueOf( (col)) + (row - 1), //south
+                String.valueOf((col)) + (row + 1), // north
+                String.valueOf((char) (col + 1)) + (row - 1), // south east
+                String.valueOf((char) (col + 1)) + row, //east
+                String.valueOf((char) (col - 1)) + (row + 1), // north east
+
+
+
         };
-        var list = Arrays.stream(moves).filter(King::validatePosition).toList();
+        var list = Arrays.stream(moves).sorted().filter(King::validatePosition).toList();
         return String.join(", ", list);
     }
 }
